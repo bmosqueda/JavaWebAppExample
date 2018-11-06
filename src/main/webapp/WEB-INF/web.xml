@@ -23,6 +23,16 @@
         <servlet-name>Register</servlet-name>
         <servlet-class>exampleApp.RegisterServlet</servlet-class>
     </servlet>
+    
+    <servlet-mapping>
+      <servlet-name>PostRequest</servlet-name>
+      <url-pattern>/postTest</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+        <servlet-name>PostRequest</servlet-name>
+        <servlet-class>exampleApp.PostRequest</servlet-class>
+    </servlet>
  
     <servlet-mapping>
         <servlet-name>Register</servlet-name>

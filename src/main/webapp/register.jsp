@@ -3,6 +3,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <body>
+	<%
+	session.invalidate();
+	out.println(session.getAttribute("hola"));
+	System.out.println(session.getAttribute("hola"));
+	%>
     <form action="register" method="post">
  
         Name:<input type="text" name="userName"/><br/>
