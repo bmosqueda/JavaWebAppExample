@@ -23,3 +23,11 @@
 127.0.0.1 - - [06/Nov/2018:10:37:24 -0600] "GET /exampleApp/register.jsp HTTP/1.1" 200 600 http-bio-8080-exec-3 887
 127.0.0.1 - - [06/Nov/2018:10:38:31 -0600] "GET /exampleApp/postTest?name=ELBRANDON HTTP/1.1" 200 - http-bio-8080-exec-1 110
 127.0.0.1 - - [06/Nov/2018:10:38:36 -0600] "GET /exampleApp/register.jsp HTTP/1.1" 500 2938 http-bio-8080-exec-2 1047
+127.0.0.1 - - [06/Nov/2018:21:34:34 -0600] "GET /com.vogella.jersey.first/rest/hello HTTP/1.1" 404 - http-bio-8080-exec-1 0
+127.0.0.1 - - [06/Nov/2018:21:34:44 -0600] "GET /exampleApp/com.vogella.jersey.first/rest/hello HTTP/1.1" 404 1043 http-bio-8080-exec-2 28
+127.0.0.1 - - [06/Nov/2018:21:34:53 -0600] "GET /exampleApp/rest/hello HTTP/1.1" 200 76 http-bio-8080-exec-3 167
+0:0:0:0:0:0:0:1 - - [06/Nov/2018:21:39:46 -0600] "POST /exampleApp/rest/hello HTTP/1.1" 405 1013 http-bio-8080-exec-6 8
+0:0:0:0:0:0:0:1 - - [06/Nov/2018:21:40:45 -0600] "GET /exampleApp/rest/hello HTTP/1.1" 200 76 http-bio-8080-exec-7 4
+0:0:0:0:0:0:0:1 - - [06/Nov/2018:21:41:37 -0600] "GET /exampleApp/rest/todo HTTP/1.1" 404 967 http-bio-8080-exec-8 5
+0:0:0:0:0:0:0:1 - - [06/Nov/2018:21:42:00 -0600] "GET /exampleApp/rest/hello/todo HTTP/1.1" 404 967 http-bio-8080-exec-9 3
+0:0:0:0:0:0:0:1 - - [06/Nov/2018:21:45:50 -0600] "POST /exampleApp/rest/hello HTTP/1.1" 200 23 http-bio-8080-exec-2 172
