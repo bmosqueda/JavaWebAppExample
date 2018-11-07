@@ -1,9 +1,12 @@
 package com.vogella.jersey.first;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 // Plain old Java Object it does not extend as class or implements
@@ -29,16 +32,23 @@ public class Hello {
   // This method is called if XML is request
   @POST
   @Produces(MediaType.APPLICATION_JSON)
-  public String sayXMLHello() {
-    return "{chido: 'y definitivo'}";
+  public String sayXMLHello(@Context HttpServletRequest req) {
+	  HttpSession session= req.getSession();
+      System.out.println(session.getAttribute("hola"));
+      if(session == null)
+    	  return "{\"err\":\"NADA\"}";
+    return "{\"name\":\""+session.getAttribute("hola")+"\"}";
   }
 
   // This method is called if HTML is request
   @GET
   @Produces(MediaType.TEXT_HTML)
-  public String sayHtmlHello() {
-    return "<html> " + "<title>" + "Hello Jersey" + "</title>"
-        + "<body><h1>" + "Hello Jersey" + "</body></h1>" + "</html> ";
+  public String sayHtmlHello(@Context HttpServletRequest req) {
+	  HttpSession session= req.getSession();
+      System.out.println(session.getAttribute("hola"));
+      if(session == null)
+    	  return "{\"err\":\"NADA\"}";
+    return "{\"name\":\""+session.getAttribute("hola")+"\"}";
   }
 
 }

@@ -4,7 +4,6 @@
 <html>
 <body>
 	<%
-	session.invalidate();
 	out.println(session.getAttribute("hola"));
 	System.out.println(session.getAttribute("hola"));
 	%>
