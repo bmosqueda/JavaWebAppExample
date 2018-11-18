@@ -5,9 +5,12 @@ import javax.servlet.http.HttpSession;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+
+import controllers.UserController;
 
 // Plain old Java Object it does not extend as class or implements
 // an interface
@@ -24,9 +27,20 @@ public class Hello {
 
   // This method is called if TEXT_PLAIN is request
   @GET
+  @Path("/mundo/{varX}")
   @Produces(MediaType.TEXT_PLAIN)
-  public String sayPlainTextHello() {
-    return "Hello Jersey";
+  public String sayPlainTextHello(@PathParam("varX") String varX, @Context HttpServletRequest req) {
+	  System.out.println(req.getParameter("param"));
+	  System.out.println("varX: ");
+	  System.out.println(varX);
+	  return "Hello Jersey mundo";
+  }
+  
+  @GET
+  @Path("/users")
+  @Produces(MediaType.APPLICATION_JSON)
+  public String usersJSON(@Context HttpServletRequest req) {
+	  return UserController.getAll();
   }
 
   // This method is called if XML is request
